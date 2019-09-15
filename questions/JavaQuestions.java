@@ -1,6 +1,8 @@
 package questions;
 import java.util.Scanner;
 
+/*---want options to be also shown randomly along with random questions---*/
+
 //custom exception class for answer out of bounds
 class MyException extends Exception{
 	public MyException(String s){
