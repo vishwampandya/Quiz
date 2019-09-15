@@ -11,6 +11,7 @@ class Quiz{
 		String name = input.nextLine();
 		name = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
 
+		/* -------here take the input for which language test you want to give-------*/
 		
 		int count=0,setOfQuestions;
 
@@ -33,5 +34,7 @@ class Quiz{
 			test.start();
 			//test result         
 			test.result();
+			
+			/*--------here take the initialize the another language test like I did in java-----*/
 	}
 }
