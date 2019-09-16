@@ -1,15 +1,10 @@
 package questions;
 import java.util.Scanner;
+import java.lang.reflect.Method;
 
 /*---want options to be also shown randomly along with random questions---*/
 
-//custom exception class for answer out of bounds
-class MyException extends Exception{
-	public MyException(String s){
-		//passing error message to parent class
-		super(s);
-	}
-}
+
 	
 //main class of package
 public class JavaQuestions{
@@ -17,23 +12,47 @@ public class JavaQuestions{
 	public static char ans;
 
    //answer checking
-	private static boolean check(char right_ans) throws MyException{
-		
-			if(ans!='a'&&ans!='b'&&ans!='c'&&ans!='d'){
-				throw new MyException("answer choice can be only a , b, c or d.");
+	private static boolean check(char right_ans , int question_number) throws MyException{
+			
+			
+		boolean answer;
+
+			while(ans!='a'&&ans!='b'&&ans!='c'&&ans!='d'){
+				System.out.printf("\n********answer choice can be only a , b, c or d.********\n");
+				Method method ;
+				JavaQuestions javaQ = new JavaQuestions();
+				try{			
+					System.out.println("*************************ANSWER AGAIN*******************");
+					System.out.print("->");
+					method= JavaQuestions.class.getDeclaredMethod("q"+question_number);
+        				Object value = method.invoke(javaQ);
+					answer = (boolean)value;
+					return answer;
+			
+				}
+				catch(Exception e){
+					System.out.println("exception occured\n"+e);	
+					return false;			
+				}
+				 
+			}
+
+			
+			if(ans==right_ans){
+				System.out.println("Correct answer : "+right_ans);
+				System.out.println("");
+				return true;
 			}
 			else{
-				if(ans==right_ans){
-					System.out.println("Correct answer : "+right_ans);
-					return true;
-				}
-				else{
-					System.out.println("Correct answer : "+right_ans);
-					return false;
-				}
+				System.out.println("Correct answer : "+right_ans);
+				System.out.println("");
+				return false;
+			}
 			
-		}
+			
 
+			
+		
 	}
     //question 1
 	public boolean q1(){
@@ -48,10 +67,10 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
-
+		int question_number=1;
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -76,10 +95,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=2;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -104,10 +124,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=3;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -132,10 +153,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=4;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -160,10 +182,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=5;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -188,10 +211,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=6;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -216,10 +240,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=7;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -244,10 +269,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=8;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -272,10 +298,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=9;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -300,10 +327,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=10;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -328,10 +356,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=11;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -356,10 +385,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=12;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -384,10 +414,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=13;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -412,10 +443,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=14;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -440,10 +472,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=1;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -468,10 +501,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=16;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -496,10 +530,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=17;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -524,10 +559,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=18;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -552,10 +588,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=19;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -580,10 +617,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=20;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -608,10 +646,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=21;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -636,10 +675,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=22;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -664,10 +704,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=23;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -692,10 +733,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=24;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -709,21 +751,22 @@ public class JavaQuestions{
 
 	//question 25
 	public boolean q25(){
-		System.out.println("question1?");
-		System.out.println("A. try");
-		System.out.println("B. finally");
-		System.out.println("C. throw");
-		System.out.println("D. catch");
+		System.out.println("Which of the following is the correct way of compiling a class?");
+		System.out.println("A. java Welcome.java");
+		System.out.println("B. javac Welcome.java");
+		System.out.println("C. javac Welcom");
+		System.out.println("D. java Welcome");
 		//taking input answer and making it lower
 		ans = input.next().charAt(0);
 		ans = Character.toLowerCase(ans);
 
 		//right_ans
-		char right_ans='a';
+		char right_ans='b';
+		int question_number=25;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -748,10 +791,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=26;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -776,10 +820,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=27;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -804,10 +849,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=28;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -832,10 +878,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=29;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -860,10 +907,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=30;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -888,10 +936,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=31;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -916,10 +965,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=32;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -944,10 +994,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=33;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -972,10 +1023,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=34;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1000,10 +1052,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=35;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1028,10 +1081,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=36;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1056,10 +1110,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=37;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1084,10 +1139,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='a';
+		int question_number=38;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1112,10 +1168,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=39;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1140,10 +1197,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=40;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1168,10 +1226,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=41;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1196,10 +1255,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=42;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1224,10 +1284,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=43;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1252,10 +1313,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=44;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1280,10 +1342,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='d';
+		int question_number=45;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1308,10 +1371,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=46;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1336,10 +1400,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=47;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1364,10 +1429,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=48;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1392,10 +1458,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='c';
+		int question_number=49;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
@@ -1420,10 +1487,11 @@ public class JavaQuestions{
 
 		//right_ans
 		char right_ans='b';
+		int question_number=50;
 
 		//checking
 		try{
-			return JavaQuestions.check(right_ans);
+			return JavaQuestions.check(right_ans,question_number);
 		}	
 		catch(MyException ex){
 			System.out.println(ex.getMessage());
