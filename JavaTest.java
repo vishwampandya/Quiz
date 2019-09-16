@@ -8,7 +8,7 @@ class JavaTest{
 	String name;
 	int marks,maxQuestions;
 
-	//to initialize name
+	//to initialize name.
 	JavaTest(String name,int maxQuestions){
 		this();
 		this.name = name;
