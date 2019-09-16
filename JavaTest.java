@@ -17,7 +17,13 @@ class JavaTest{
 
 	//to give instructions
 	JavaTest(){
-		System.out.println("Instructions");
+		System.out.println("_________________Instructions_________________");
+		System.out.println("# Enter only a , b , c , d for answer choice.");					
+		System.out.println("# There is no time limit.");	
+		System.out.println("# Each questions carries one marks.");
+		System.out.println("# There is no negative marking.");
+		System.out.println("______________________________________________\n");
+		
 	}
 
 	//starting test
@@ -52,6 +58,7 @@ class JavaTest{
         			if(answer){
         				count++; //to calucate marks
         			}
+				
         		}
         		catch(Exception e){
 					System.out.println("exception occured\n"+e);
