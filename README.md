@@ -15,4 +15,4 @@ a simple random questions quiz program using core java.
 3) more language test like of cpp ,python ,php etc.
 
 #Bugs present
-1)while taking answer reads only first character , hence example a and animal both will be taken as valid input and considered as          option a.
+1) while taking answer reads only first character , hence example a and animal both will be taken as valid input and considered as            option a.
